@@ -1,0 +1,34 @@
+﻿@model WebApp_core_Login.Models.viewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+ <link href="~/css/stylesheet.css" rel="stylesheet" />
+@*kestrel sunucuları ? *@
+<div class="background-wrap">
+    <div class="background"></div>
+</div>
+<form id="accesspanel" action="Login" method="post">
+    <h1 id="litheader">LOGİN</h1>
+    <div></div>
+    <div class="inset">
+        <p>
+            <input asp-for="username" type="text" name="username" id="email" placeholder="User Name">
+        </p>
+        <span asp-validation-for="username"></span>
+        <p>
+            <input asp-for="password" type="password" name="password" id="password" placeholder="Access code">
+        </p>
+        <span asp-validation-for="password"></span>
+        <div style="text-align: center;">
+            <div class="checkboxouter">
+                <input type="checkbox" name="rememberme" id="remember" value="Remember">
+                <label class="checkbox"></label>
+            </div>
+            <label for="remember">Remember me for 14 days</label>
+        </div>
+        <input class="loginLoginValue" type="hidden" name="service" value="login" />
+    </div>
+    <p class="p-container">
+        <input type="submit" name="Login" id="go" value="Authorize">
+    </p>
+</form>
