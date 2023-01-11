@@ -11,16 +11,16 @@
         <form method="post">
             <div class="form-group mb-3">
                 <label asp-for="username" class="form-label">Username</label>
-                <input asp-for=username class="form-control" placeholder="Username" />
+                <input asp-for=username type="text" class="form-control" placeholder="Username" />
                 <span asp-validation-for="username"></span>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="password" class="form-label">Password</label>
-                <input asp-for="password" class="form-control" placeholder="Password"/>
+                <input asp-for="password" type="password"class="form-control" placeholder="Password"/>
             </div>
             <div class="form-group mb-3">
                 <label asp-for="password2" class="form-label">Verify Password</label>
-                <input asp-for="password2" class="form-control" placeholder="Verify Password"/>
+                <input asp-for="password2" type="password" class="form-control" placeholder="Verify Password" />
             </div>
             <div class="form-group mb-3">
                 <button type="submit" class="btn btn-primary">Login</button>

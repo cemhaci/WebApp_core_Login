@@ -19,6 +19,7 @@ namespace WebApp_core_Login.Models
         public bool activate { get; set; }=false;
         public DateTime createdDate { get; set; }=DateTime.Now;
 
-
+        [Required][StringLength(50)]
+        public string? role { get; set; }
     }
 }
