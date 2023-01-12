@@ -90,5 +90,32 @@ namespace WebApp_core_Login.Controllers
             }
             return View(model);
         }
+        public IActionResult profil()
+        {
+            Guid id = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            User user = db.Users.SingleOrDefault(x => x.id == id);
+            ViewData["useName"]=user.Name;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult nameSurnameSave(string nameSurname)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid id=new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                User user=db.Users.SingleOrDefault(x=>x.id==id);
+
+
+                user.Name=nameSurname;
+                db.SaveChanges();
+                return RedirectToAction("profil");
+            }
+            return View("profil");
+        }
+        public IActionResult logout()
+        {
+
+            HttpContext.SignOutAsync()
+        }
     }
 }

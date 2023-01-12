@@ -23,7 +23,7 @@ namespace WebApp_core_Login
                 o.SlidingExpiration=false;  //1 gün dolduðunda silinecek. süre ötelensin mi= false
                 o.LoginPath="/Account/Login";
                 o.LogoutPath="/Account/Logout";
-                o.AccessDeniedPath="Home/AccesDenied";
+                o.AccessDeniedPath="/Home/AccesDenied";
             });
 
             var app = builder.Build();

@@ -29,6 +29,12 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)     @*giriş yapıldıysa*@
                         {
+                            if (User.IsInRole("admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Admin</a>
+                                </li>
+                            }
 
                         }
                            <li class="nav-item">

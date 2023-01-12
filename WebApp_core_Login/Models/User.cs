@@ -20,6 +20,6 @@ namespace WebApp_core_Login.Models
         public DateTime createdDate { get; set; }=DateTime.Now;
 
         [Required][StringLength(50)]
-        public string? role { get; set; }
+        public string role { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace WebApp_core_Login.Migrations
                 table: "User",
                 type: "nvarchar(100)",
                 maxLength: 50,
-                nullable: true,
+                nullable: false,
                 defaultValue: "user");
         }
 

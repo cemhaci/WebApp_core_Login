@@ -18,6 +18,10 @@ namespace WebApp_core_Login.Controllers
             return View();
         }
 
+        public IActionResult AccesDenied()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -28,5 +32,6 @@ namespace WebApp_core_Login.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
