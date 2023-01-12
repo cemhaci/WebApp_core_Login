@@ -14,12 +14,13 @@ namespace WebApp_core_Login.Models
         [StringLength(30)]
         public string Username { get; set; }
         [Required]
-        [StringLength(10)]
+        [StringLength(100)]
         public string password { get; set; }
         public bool activate { get; set; }=false;
         public DateTime createdDate { get; set; }=DateTime.Now;
 
-        [Required][StringLength(50)]
-        public string role { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string role { get; set; } = "user";
     }
 }

@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.Extensions.Configuration;
 using NETCore.Encrypt.Extensions;
+using System.Globalization;
 using System.Security.Claims;
 using WebApp_core_Login.Models;
 using WebApp_core_Login.Models.viewModel;
@@ -27,6 +29,7 @@ namespace WebApp_core_Login.Controllers
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Login(LoginViewModel model)
         {
             if (ModelState.IsValid)  //girilen bilgiler boşsa
@@ -38,7 +41,8 @@ namespace WebApp_core_Login.Controllers
                 if (user != null)
                 {
                     List<Claim> claims=new List<Claim>();  //normal user listesi olarak atılsaydı listeye hepsini atacaktık bir nesne oldıuğundan dollayı. ama claim listesinde tüm değerler parça parça bulunuyor.böylelikle coocie ye atabileceğiz bu bilgileri
-                    claims.Add(new Claim("id",user.id.ToString()));
+                    claims.Add(new Claim(ClaimTypes.NameIdentifier, user.id.ToString()));
+                    claims.Add(new Claim(ClaimTypes.Role, user.role));
                     claims.Add(new Claim("Name",user.Name??string.Empty));  //null olamaz diye hata veriyor. o yüzden nullsa boş string at dedik
                     claims.Add(new Claim("Username",user.Username));
 
@@ -59,6 +63,7 @@ namespace WebApp_core_Login.Controllers
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Register(registerViewModel model)
         {
             if(ModelState.IsValid)
@@ -92,11 +97,20 @@ namespace WebApp_core_Login.Controllers
         }
         public IActionResult profil()
         {
-            Guid id = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            User user = db.Users.SingleOrDefault(x => x.id == id);
-            ViewData["useName"]=user.Name;
+            Profileİnfo();
             return View();
         }
+
+        private void Profileİnfo()
+        {
+            Guid id = new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            User user = db.Users.SingleOrDefault(x => x.id == id);
+            ViewData["useName"] = user.Name;
+            ViewData["userName"] = user.Username;
+            ViewData["password"] = user.password;
+            ViewData["mesaj"] = TempData["mesaj"];
+        }
+
         [HttpPost]
         public IActionResult nameSurnameSave(string nameSurname)
         {
@@ -112,10 +126,55 @@ namespace WebApp_core_Login.Controllers
             }
             return View("profil");
         }
+        [HttpPost]
+        public IActionResult userNameSave(string username)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid id=new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                User user = db.Users.SingleOrDefault(x => x.id == id);
+
+                if(db.Users.Any(x=>x.Username.ToLower()==username.ToLower() && x.id != id))
+                {
+                    ModelState.AddModelError("", "bu kullanıcı sistemde kayıtlı bulunuyor");
+                    return View("profil");
+                }
+                user.Username = username;
+                db.SaveChanges();
+
+                TempData["mesaj"] = "kullanıcı adı değişti";
+
+                Profileİnfo();
+                return RedirectToAction("profile");
+
+            }
+            return View("profil");
+        }
+        public IActionResult passwordSave(string password)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid id=new Guid(User.FindFirstValue(ClaimTypes.NameIdentifier));
+                User user = db.Users.SingleOrDefault(x => x.id == id);
+
+                string sifre = _configuration.GetValue<string>("Appsettings=sifre");
+                sifre = password + sifre;
+                string md5sifre = sifre.MD5();
+
+                user.password=md5sifre;
+                db.SaveChanges();
+
+                TempData["mesaj"] = "nameData";
+                Profileİnfo();
+                return RedirectToAction("profil");
+            }
+            return View("profil");
+        }
         public IActionResult logout()
         {
 
-            HttpContext.SignOutAsync()
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
         }
     }
 }

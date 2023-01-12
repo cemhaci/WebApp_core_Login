@@ -15,7 +15,7 @@
             <div class="form-group">
                 <label class="form-label">ad soyad</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="nameSurname" placeholder="ad soyad"
+                    <input type="text" class="form-control" name="nameSurname" placeholder="ad soyad" />
                     <button class="btn btn-outline-secondary" type="submit">Kaydet</button>
                 </div>
             </div>
@@ -28,11 +28,25 @@
             <div class="form-group">
                 <label class="form-label">kullanıcı adı</label>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="kullanıcı ad"
+                    <input type="text" class="form-control" placeholder="kullanıcı ad" />
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Kaydet</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" action="passwordSave">
+            <div class="form-group">
+                <label class="form-label">şifre</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="şifre" value="@ViewData["password"]" />
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Kaydet</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 

@@ -36,13 +36,23 @@
                                 </li>
                             }
 
-                        }
+                        
                            <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">@User.FindFirst("username")</a>  @* claim deki user name i aldı*@
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="profil"><i class="fa-solid fa-right-to-bracket me-1"></i>@User.FindFirst("username")</a>  @* claim deki user name i aldı*@
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="logout"><i class="fa-solid fa-right-to-bracket me-1"></i>Logout</a>
                         </li>
+                        }
+                        else
+                        {
+ <li class="nav-item ms-auto">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"> <i class="fa-solid fa-right-to-bracket me-1"></i>Login</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"> <i class="fa-solid fa-user me-1"></i>Register</a>
+                          </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -54,11 +64,11 @@
         </main>
     </div>
 
-@*    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - WebApp_core_Login - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>*@
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
