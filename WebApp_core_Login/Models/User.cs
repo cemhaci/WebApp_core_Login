@@ -18,9 +18,12 @@ namespace WebApp_core_Login.Models
         public string password { get; set; }
         public bool activate { get; set; }=false;
         public DateTime createdDate { get; set; }=DateTime.Now;
+        [StringLength(255)]
+        public string profileImageFile { get; set; }="user_1jpg";
 
         [Required]
         [StringLength(50)]
         public string role { get; set; } = "user";
+
     }
 }

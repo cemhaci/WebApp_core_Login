@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.Extensions.Configuration;
 using NETCore.Encrypt.Extensions;
 using System.Globalization;
+using System.Reflection.PortableExecutable;
 using System.Security.Claims;
 using WebApp_core_Login.Models;
 using WebApp_core_Login.Models.viewModel;
@@ -108,9 +110,28 @@ namespace WebApp_core_Login.Controllers
             ViewData["useName"] = user.Name;
             ViewData["userName"] = user.Username;
             ViewData["password"] = user.password;
+            ViewData["Image"] = user.profileImageFile;
             ViewData["mesaj"] = TempData["mesaj"];
         }
+        public IActionResult profileImageSave(IFormFile profileImage)
+        {
+            if(ModelState.IsValid) 
+                { 
+            Guid id=new Guid(User.FindFirstValue(claimType:ClaimTypes.NameIdentifier));
+            User user=db.Users.SingleOrDefault(x=>x.id == id);
 
+            string filename=$"f_{id}.jpg";
+            Stream stream=new FileStream($"wwwroot/image/{filename}",FileMode.OpenOrCreate);  //masaüstünden veya dosyadan eklemek istediğimiz dosyaya bu ismi vererek ekledik
+            profileImage.CopyTo(stream);
+            stream.Close();
+            stream.Dispose();
+                
+                user.profileImageFile=filename;
+                db.SaveChanges();
+                return RedirectToAction("profil");
+            }
+            return View("profil");
+        }
         [HttpPost]
         public IActionResult nameSurnameSave(string nameSurname)
         {

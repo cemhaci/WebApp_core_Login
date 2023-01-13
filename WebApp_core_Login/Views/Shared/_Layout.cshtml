@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebApp_core_Login</title>
+    <link href="~/lib/toastr.js/toastr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebApp_core_Login.styles.css" asp-append-version="true" />
     <link href="~/font-awesome/css/fontawesome.css" rel="stylesheet" />
     <link href="~/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -27,18 +29,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        @if (User.Identity.IsAuthenticated)     @*giriş yapıldıysa*@
+                        @if(User.Identity.IsAuthenticated)     @*giriş yapıldıysa*@
                         {
-                            if (User.IsInRole("admin"))
+                            if (User.IsInRole("admin"))  //isnrole methodu property me yazdığım role yazısından buluyor onu
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="admin" asp-action="Index">Admin</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" asp-controller="admin" asp-action="Index" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Admin
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-controller="User" asp-action="Index">User</a></li>
+                                        <li><a class="dropdown-item" asp-controller="admin" asp-action="Index">Admin Manage</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
                                 </li>
                             }
 
                         
-                           <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="profil"><i class="fa-solid fa-right-to-bracket me-1"></i>@User.FindFirst("username")</a>  @* claim deki user name i aldı*@
+                           <li class="nav-item ms-auto">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="profil"><i class="fa-solid fa-right-to-bracket me-1"></i>@User.FindFirst("Username").Value</a>  @* claim deki user name i aldı*@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="logout"><i class="fa-solid fa-right-to-bracket me-1"></i>Logout</a>
@@ -46,7 +56,7 @@
                         }
                         else
                         {
- <li class="nav-item ms-auto">
+                         <li class="nav-item ms-auto">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"> <i class="fa-solid fa-right-to-bracket me-1"></i>Login</a>
                           </li>
                           <li class="nav-item">
@@ -72,6 +82,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/toastr.js/toastr.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

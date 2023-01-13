@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Reflection;
 using WebApp_core_Login.Models;
 
 namespace WebApp_core_Login
@@ -13,6 +14,7 @@ namespace WebApp_core_Login
 
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());  //assambly bizim solication projemiz. ve assambly de profile classýmýzý bul ve onu execute et
 
             builder.Services.AddDbContext<DatabaseContext>(o=>o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 

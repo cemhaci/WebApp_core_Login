@@ -3,8 +3,13 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/lib/toastr.js/"
+    },
+    {
+      "provider": "cdnjs",
       "library": "font-awesome@6.2.1",
-      "destination": "wwwroot/font-awesome/"
+      "destination": "wwwroot/lib/font-awesome/"
     }
   ]
 }

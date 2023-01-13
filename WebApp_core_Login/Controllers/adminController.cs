@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp_core_Login.Controllers
 {
-    public class adminController1 : Controller
+    public class adminController : Controller
     {
         [Authorize]
         public IActionResult Index()
