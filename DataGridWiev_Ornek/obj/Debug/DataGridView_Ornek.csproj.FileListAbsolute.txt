@@ -1,0 +1,11 @@
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridView_Ornek.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridView_Ornek.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridWiev_Ornek.Form1.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridWiev_Ornek.Properties.Resources.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridView_Ornek.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridView_Ornek.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\bin\Debug\DataGridWiev_Ornek.exe.config
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\bin\Debug\DataGridWiev_Ornek.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\bin\Debug\DataGridWiev_Ornek.pdb
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridWiev_Ornek.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridWiev_Ornek\obj\Debug\DataGridWiev_Ornek.pdb

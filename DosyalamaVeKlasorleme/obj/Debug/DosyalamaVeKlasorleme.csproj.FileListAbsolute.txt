@@ -1,0 +1,11 @@
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\bin\Debug\DosyalamaVeKlasorleme.exe.config
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\bin\Debug\DosyalamaVeKlasorleme.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\bin\Debug\DosyalamaVeKlasorleme.pdb
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.Form1.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.Properties.Resources.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DosyalamaVeKlasorleme\obj\Debug\DosyalamaVeKlasorleme.pdb

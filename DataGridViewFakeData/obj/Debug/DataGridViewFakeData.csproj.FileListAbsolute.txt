@@ -1,0 +1,15 @@
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\bin\Debug\DataGridViewFakeData.exe.config
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\bin\Debug\DataGridViewFakeData.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\bin\Debug\DataGridViewFakeData.pdb
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\bin\Debug\FakeData.dll
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\bin\Debug\FakeData.pdb
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.csproj.AssemblyReference.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.csproj.SuggestedBindingRedirects.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.Form1.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.Properties.Resources.resources
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.csproj.GenerateResource.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.csproj.CopyComplete
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.exe
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.pdb
+C:\Users\pc\source\repos\WindowsFormUygulamalari\DataGridViewFakeData\obj\Debug\DataGridViewFakeData.SecilenMusteriForm.resources
